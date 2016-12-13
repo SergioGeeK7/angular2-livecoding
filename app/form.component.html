@@ -1,0 +1,7 @@
+<form action="#">
+    <label for="name">name:</label>
+    <input type="text" #name [(ngModel)]="user.name" name="name">
+    <label for="tel">tel:</label>
+    <input type="tel" #tel [(ngModel)]="user.tel" name="tel">
+    <input type="submit" (click)="save(name.value,tel.value)">
+</form>
