@@ -11,15 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var ContactFormComponent = (function () {
     function ContactFormComponent() {
+        this.saveContact = new core_1.EventEmitter();
     }
     ContactFormComponent.prototype.save = function (name, tel) {
-        this.user.name = "name";
-        this.user.tel = "tel";
+        this.saveContact.emit({ name: name, tel: tel });
     };
     __decorate([
-        core_1.Input(), 
+        core_1.Output(), 
         __metadata('design:type', Object)
-    ], ContactFormComponent.prototype, "user", void 0);
+    ], ContactFormComponent.prototype, "saveContact", void 0);
     ContactFormComponent = __decorate([
         core_1.Component({
             selector: 'my-form',

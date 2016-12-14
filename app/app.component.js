@@ -11,13 +11,15 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var AppComponent = (function () {
     function AppComponent() {
-        this.user = { name: "", tel: "" };
-        this.users = [{ name: "sdf", tel: "123" }, { name: "123", tel: "1231" }];
+        this.users = [];
     }
+    AppComponent.prototype.saveContact = function (user) {
+        this.users.push(user);
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n    <h2> Oes </h2>\n    <my-form [user]=\"user\"> </my-form>\n    <my-contact-list [items]=\"users\"> </my-contact-list>\n    "
+            template: "\n        <h2> Contact </h2>\n        <my-form (saveContact)=\"saveContact($event)\"> </my-form>\n        <my-contact-list [items]=\"users\"> </my-contact-list>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
