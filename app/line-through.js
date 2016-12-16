@@ -14,7 +14,15 @@ var LineThrough = (function () {
         this.el = el;
     }
     LineThrough.prototype.onClick = function () {
-        this.el.nativeElement.style.textDecoration = "line-through";
+        this
+            .el
+            .nativeElement
+            .style
+            .textDecoration = this
+            .el
+            .nativeElement
+            .style
+            .textDecoration ? "" : "line-through";
     };
     __decorate([
         core_1.HostListener("click"), 

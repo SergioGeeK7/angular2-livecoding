@@ -8,6 +8,14 @@ export default class LineThrough{
 
     }
     @HostListener("click") onClick (){
-        this.el.nativeElement.style.textDecoration = "line-through";
+        this
+          .el
+          .nativeElement
+          .style
+          .textDecoration =   this
+                                .el
+                                .nativeElement
+                                .style
+                                .textDecoration ? "" : "line-through";
     }
 }

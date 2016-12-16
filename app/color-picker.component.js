@@ -9,31 +9,29 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ContactFormComponent = (function () {
-    function ContactFormComponent() {
-        this.saveContact = new core_1.EventEmitter();
+var ColorPicker = (function () {
+    function ColorPicker() {
+        this.colors = ["black", "red", "yellow", "blue", "white"];
+        this.selectedColor = new core_1.EventEmitter();
     }
-    ContactFormComponent.prototype.save = function (name, tel) {
-        var color = this.color;
-        this.saveContact.emit({ name: name, tel: tel, color: color });
-    };
-    ContactFormComponent.prototype.selectedColor = function (color) {
-        this.color = color;
+    ColorPicker.prototype.onSelected = function (color) {
+        this.selectedColor.emit(color);
     };
     __decorate([
         core_1.Output(), 
-        __metadata('design:type', Object)
-    ], ContactFormComponent.prototype, "saveContact", void 0);
-    ContactFormComponent = __decorate([
+        __metadata('design:type', core_1.EventEmitter)
+    ], ColorPicker.prototype, "selectedColor", void 0);
+    ColorPicker = __decorate([
         core_1.Component({
-            selector: 'my-form',
-            templateUrl: 'form.component.html',
-            moduleId: module.id
+            selector: 'color-picker',
+            moduleId: module.id,
+            templateUrl: 'color-picker.component.html',
+            styles: ["\n    .color{\n        width:24px;\n        height:24px;\n        display:inline-block;\n        border-radius:100%;\n        text-align:center;\n    }\n    \n    "]
         }), 
         __metadata('design:paramtypes', [])
-    ], ContactFormComponent);
-    return ContactFormComponent;
+    ], ColorPicker);
+    return ColorPicker;
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ContactFormComponent;
-//# sourceMappingURL=form.component.js.map
+exports.default = ColorPicker;
+//# sourceMappingURL=color-picker.component.js.map

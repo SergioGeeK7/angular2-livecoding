@@ -6,7 +6,12 @@ import {Component,Input,EventEmitter,Output} from '@angular/core'
 })
 export default class ContactFormComponent {
     @Output() saveContact = new EventEmitter();
+    color:string
     save(name:any, tel:any){
-        this.saveContact.emit({name,tel})
+        const color = this.color;
+        this.saveContact.emit({name,tel,color});
+    }
+    selectedColor(color:string){
+        this.color = color;
     }
 }

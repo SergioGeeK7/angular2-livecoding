@@ -15,13 +15,14 @@ var app_component_1 = require('./app.component');
 var form_component_1 = require('./form.component');
 var list_contact_component_1 = require('./list-contact.component');
 var line_through_1 = require('./line-through');
+var color_picker_component_1 = require('./color-picker.component');
 var AppModule = (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         core_1.NgModule({
             imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-            declarations: [app_component_1.default, form_component_1.default, list_contact_component_1.default, line_through_1.default],
+            declarations: [app_component_1.default, form_component_1.default, list_contact_component_1.default, line_through_1.default, color_picker_component_1.default],
             bootstrap: [app_component_1.default]
         }), 
         __metadata('design:paramtypes', [])

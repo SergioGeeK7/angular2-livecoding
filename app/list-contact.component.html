@@ -1,5 +1,5 @@
 <ul>
-    <li *ngFor="let item of items" (dblclick)="onItemDblclick(item)" line-through>
+    <li *ngFor="let item of items" (dblclick)="onItemDblclick(item)" line-through [ngStyle]="{'color':item.color}">
         {{item.name + " - " + (item.tel)}}
     </li>
 </ul>

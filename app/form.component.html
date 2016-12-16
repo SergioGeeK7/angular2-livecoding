@@ -1,7 +1,28 @@
 <form action="#">
-    <label for="name">name:</label>
-    <input type="text" #name name="name">
-    <label for="tel">tel:</label>
-    <input type="tel" #tel name="tel">
-    <input type="submit" (click)="save(name.value,tel.value)">
+    <table>
+        <tr>
+            <td><label for="name">name:</label></td>
+            <td><input type="text" #name name="name"></td>
+        </tr>
+        <tr>
+            <td> <label for="tel">tel:</label></td>
+            <td><input type="tel" #tel name="tel"></td>
+        </tr>
+
+        <tr>
+            <td><label for="color">color</label></td>
+            <td>
+                <color-picker (selectedColor)="selectedColor($event)"></color-picker>
+            </td>
+        </tr>
+
+        <tr>
+            <td><input type="submit" (click)="save(name.value,tel.value)"></td>
+            <td></td>
+        </tr>
+
+    </table>
+
+
+
 </form>
