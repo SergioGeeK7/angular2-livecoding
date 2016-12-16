@@ -9,31 +9,27 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var ContactListComponent = (function () {
-    function ContactListComponent() {
-        this.onDelete = new core_1.EventEmitter();
+var LineThrough = (function () {
+    function LineThrough(el) {
+        this.el = el;
     }
-    ContactListComponent.prototype.onItemDblclick = function (item) {
-        this.onDelete.emit(item);
+    LineThrough.prototype.onClick = function () {
+        this.el.nativeElement.style.textDecoration = "line-through";
     };
     __decorate([
-        core_1.Output(), 
-        __metadata('design:type', core_1.EventEmitter)
-    ], ContactListComponent.prototype, "onDelete", void 0);
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Array)
-    ], ContactListComponent.prototype, "items", void 0);
-    ContactListComponent = __decorate([
-        core_1.Component({
-            selector: 'my-contact-list',
-            moduleId: module.id,
-            templateUrl: 'list-contact.component.html'
+        core_1.HostListener("click"), 
+        __metadata('design:type', Function), 
+        __metadata('design:paramtypes', []), 
+        __metadata('design:returntype', void 0)
+    ], LineThrough.prototype, "onClick", null);
+    LineThrough = __decorate([
+        core_1.Directive({
+            selector: '[line-through]'
         }), 
-        __metadata('design:paramtypes', [])
-    ], ContactListComponent);
-    return ContactListComponent;
+        __metadata('design:paramtypes', [core_1.ElementRef])
+    ], LineThrough);
+    return LineThrough;
 }());
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = ContactListComponent;
-//# sourceMappingURL=list-contact.component.js.map
+exports.default = LineThrough;
+//# sourceMappingURL=line-through.js.map

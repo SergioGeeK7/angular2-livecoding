@@ -16,10 +16,13 @@ var AppComponent = (function () {
     AppComponent.prototype.saveContact = function (user) {
         this.users.push(user);
     };
+    AppComponent.prototype.onDelete = function (user) {
+        this.users = this.users.filter(function (i) { return i !== user; });
+    };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'my-app',
-            template: "\n        <h2> Contact </h2>\n        <my-form (saveContact)=\"saveContact($event)\"> </my-form>\n        <my-contact-list [items]=\"users\"> </my-contact-list>\n    "
+            template: "\n        <h2> Todo List </h2>\n        <my-form (saveContact)=\"saveContact($event)\"> </my-form>\n        <my-contact-list [items]=\"users\" (onDelete)=\"onDelete($event)\"> </my-contact-list>\n    "
         }), 
         __metadata('design:paramtypes', [])
     ], AppComponent);
